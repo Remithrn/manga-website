@@ -1,0 +1,33 @@
+{% extends "blogapp/base.html" %}
+
+{% block content %}
+<div class="container w-75">
+    <div class="shadow border border-2 border-light p-3 my-3">
+        <h2>login now</h2>
+        <form class="p-2 mb-2" action="" method="post">
+            {% csrf_token %}
+            
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">username</label>
+    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Note that username is case sensitive</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+ 
+
+</form>
+<h2>sign up if not registered</h2>
+<button  class="btn btn-outline-secondary"><a href="{% url 'register' %}">sign up</a></button>
+ 
+       
+    </div>
+
+</div>
+
+
+{% endblock content %}
